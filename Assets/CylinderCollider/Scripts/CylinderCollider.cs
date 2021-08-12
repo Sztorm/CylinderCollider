@@ -9,6 +9,7 @@ namespace Sztorm.CylinderCollider
     /// editor mode.
     /// </summary>
     [AddComponentMenu("Physics/CylinderCollider")]
+    [DisallowMultipleComponent]
     public sealed class CylinderCollider : MonoBehaviour
     {
         private const string ColliderHolderNamePrefix = "ColliderHolder_ffzTiMRQ5y_";
