@@ -13,6 +13,12 @@ namespace Sztorm.CylinderCollider
 
         public override void OnInspectorGUI()
         {
+            bool prevGuiState = GUI.enabled;
+
+            if (Application.isPlaying)
+            {
+                GUI.enabled = false;
+            }
             DrawDefaultInspector();
             CylinderCollider unboxedTarget = (CylinderCollider)target; 
 
@@ -20,6 +26,7 @@ namespace Sztorm.CylinderCollider
             {
                 GenerateCollidersMethod.Invoke(unboxedTarget, Array.Empty<object>());
             }
+            GUI.enabled = prevGuiState;
         }
     }
 }
